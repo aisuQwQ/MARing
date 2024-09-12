@@ -1,9 +1,13 @@
 const container = document.querySelector("#container");
 const modal = document.querySelector("#modal");
+const modal2 = document.querySelector("#modal2");
 // const modalcontent = document.querySelector("#content");
-const modalcn = document.querySelector("#cn");
-const modaljp = document.querySelector("#jp");
-const modalname = document.querySelector("name");
+const modalcn = document.querySelector("#modal cn");
+const modaljp = document.querySelector("#modal jp");
+const modal2cn = document.querySelector("#modal2 cn");
+const modal2jp = document.querySelector("#modal2 jp");
+const modalname = document.querySelector("#modal name");
+const modal2name = document.querySelector("#modal2 name");
 const load = document.querySelector("#load");
 import { getCards } from "./gss.js";
 
@@ -55,17 +59,48 @@ class CARD {
             stars.appendChild(nostar);
         }
     }
+    //modal書き込み
     bind(data) {
         this.card.addEventListener("click", () => {
-            modalcn.innerText = data.skill1cn;
-            modaljp.innerText = data.skill1jp;
+            const words = {};
+            const wordsjp = {};
+            let skill1cn = data.skill1cn;
+            let skill1jp = data.skill1jp;
+            for (const line of data.notecn.split("\n")) {
+                const word = line.split("：")[0];
+                words[word] = line.split("：")[1];
+                skill1cn = skill1cn.replace(word, "<span>" + word + "</span>");
+            }
+            for (const line of data.notejp.split("\n")) {
+                const word = line.split("：")[0];
+                wordsjp[word] = line.split("：")[1];
+                skill1jp = skill1jp.replace(word, "<span>" + word + "</span>");
+            }
+
+            modalcn.innerHTML = skill1cn;
+            modaljp.innerHTML = skill1jp;
             modalname.innerText = data.name;
+
+            modal.querySelectorAll("span").forEach((ele) => {
+                ele.addEventListener("click", (e) => {
+                    const word = e.target.innerText;
+                    modal2.classList.toggle("visible");
+                    modal2cn.innerText = words[word];
+                    modal2jp.innerText = wordsjp[word];
+                    modal2name.innerText = word;
+                });
+            });
+
             modal.classList.toggle("visible");
         });
     }
 }
 modal.addEventListener("click", (e) => {
     if (e.target.id == "modal") modal.classList.toggle("visible");
+    if (e.target.id == "modal2") modal2.classList.toggle("visible");
+});
+modal2.addEventListener("click", (e) => {
+    if (e.target.id == "modal2") modal2.classList.toggle("visible");
 });
 
 //カード生成

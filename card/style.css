@@ -48,7 +48,8 @@ nostar {
     background-image: url("asset/nostar.png");
 }
 
-#modal {
+#modal,
+#modal2 {
     display: none;
     z-index: 10;
     width: 100vw;
@@ -58,12 +59,16 @@ nostar {
     top: 0;
     left: 0;
 }
-#modal.visible {
+#modal2 {
+    z-index: 20;
+}
+#modal.visible,
+#modal2.visible {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#content {
+.content {
     width: 80%;
     max-height: 60vh;
     overflow-y: scroll;
@@ -74,12 +79,15 @@ nostar {
     background-color: rgb(255, 255, 255);
     opacity: 1;
 }
+#modal2 .content {
+    width: 75%;
+}
 name {
     display: block;
     width: 100%;
     text-align: center;
 }
-span {
+.content > lang {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,9 +96,13 @@ span {
     background-color: #e7e7e7;
     border-radius: 50%;
 }
-
+cn > span,
+jp > span {
+    color: #4eb5e7;
+    text-decoration: underline;
+}
 #load {
-    z-index: 10;
+    z-index: 100;
     border-radius: 5px;
     width: 50px;
     height: 50px;

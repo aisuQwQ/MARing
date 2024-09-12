@@ -1,4 +1,4 @@
-const url = "https://script.google.com/macros/s/AKfycbwUmZQfsRClXOYh7tx51uX06cLfymYIU0l7-3odgpWM2s_SmpGkzTCyQ5ZHKQwab3xP/exec";
+const url = "https://script.google.com/macros/s/AKfycbwbOgCs0bqb9GqZ8lfPsDcDaB9Xr48dR8Jsb_yfhbPJFa2m7y_xhYSR7vE7N7nkGljP/exec";
 
 export async function getCards() {
     const res = await fetch(url);
