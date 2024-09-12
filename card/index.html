@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MARing</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="header">
+            <form id="form">
+                <select name="job" id="job">
+                    <option value="">job</option>
+                    <option value="富豪">富豪</option>
+                    <option value="盗賊傭兵">盗賊傭兵</option>
+                    <option value="歌姫">歌姫</option>
+                </select>
+                <select name="type" id="type">
+                    <option value="">type</option>
+                    <option value="物">物</option>
+                    <option value="魔">魔</option>
+                    <option value="守">守</option>
+                    <option value="弱">弱</option>
+                    <option value="治">治</option>
+                    <option value="支">支</option>
+                </select>
+                <select name="rarity" id="rarity">
+                    <option value="">rarity</option>
+                    <option value="MR">MR</option>
+                    <option value="UR">UR</option>
+                    <option value="SR">SR</option>
+                    <option value="R">R</option>
+                    <option value="N">N</option>
+                </select>
+                <select name="cost" id="cost">
+                    <option value="">cost</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </form>
+        </div>
+        <div id="container"></div>
+        <div id="modal">
+            <div id="content">
+                <name></name>
+                <span>中</span>
+                <div id="cn"></div>
+                <span>日</span>
+                <div id="jp"></div>
+            </div>
+        </div>
+        <div id="load">
+            <div id="icon"></div>
+        </div>
+        <script type="module" src="./index.js"></script>
+    </body>
+</html>

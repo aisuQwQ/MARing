@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+}
+
+#header {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+card {
+    width: 192px;
+    height: 86px;
+    background-size: 192px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+}
+.hide {
+    display: none !important;
+}
+stars {
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    margin-top: auto;
+    bottom: 0;
+    display: flex;
+}
+star {
+    width: 15px;
+    height: 15px;
+    margin-right: -5px;
+    background-size: cover;
+    background-image: url("asset/star.png");
+}
+nostar {
+    width: 15px;
+    height: 15px;
+    margin-right: -5px;
+    background-size: cover;
+    background-image: url("asset/nostar.png");
+}
+
+#modal {
+    display: none;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#modal.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#content {
+    width: 80%;
+    max-height: 60vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+}
+name {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #e7e7e7;
+    border-radius: 50%;
+}
+
+#load {
+    z-index: 10;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#load > div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: solid 4px white;
+    border-top: solid 4px transparent;
+    animation: spin 0.75s linear 0s infinite;
+}
