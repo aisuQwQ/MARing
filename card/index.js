@@ -45,6 +45,7 @@ class CARD {
         this.card.style.backgroundImage = `url("./asset/${data.name}.png")`;
         container.appendChild(this.card);
         const nostar = this.star_rare[data.rarity] - data.star;
+        this.createType(this.card, data.type);
         this.createStars(this.card, data.star, nostar);
     }
     createStars(dom, x, y) {
@@ -59,6 +60,13 @@ class CARD {
             stars.appendChild(nostar);
         }
     }
+    createType(dom, type) {
+        const typeDom = document.createElement("type");
+
+        typeDom.classList.add(type);
+        dom.appendChild(typeDom);
+    }
+
     //modal書き込み
     bind(data) {
         this.card.addEventListener("click", () => {

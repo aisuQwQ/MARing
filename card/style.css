@@ -21,10 +21,37 @@ card {
     background-position: center;
 
     display: flex;
+    flex-direction: column;
 }
 .hide {
     display: none !important;
 }
+
+type {
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    background-size: contain;
+}
+type.物 {
+    background-image: url("asset/物.png");
+}
+type.魔 {
+    background-image: url("asset/魔.png");
+}
+type.守 {
+    background-image: url("asset/守.png");
+}
+type.弱 {
+    background-image: url("asset/弱.png");
+}
+type.支 {
+    background-image: url("asset/支.png");
+}
+type.治 {
+    background-image: url("asset/治.png");
+}
+
 stars {
     user-select: none;
     -webkit-user-select: none;
